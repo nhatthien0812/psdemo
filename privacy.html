@@ -1,0 +1,242 @@
+<html class=" "><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--- basic page needs
+    ================================================== -->
+    
+    <title>Polaris Infosec - Privacy Policy</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="https://www.polarisec.com/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://www.polarisec.com/favicon.ico" type="image/x-icon">
+<script type="text/javascript">// Promises 
+var _eid_promises = {}; 
+// Turn the incoming message from extension 
+// into pending Promise resolving 
+window.addEventListener("message", function(event) { 
+    if(event.source !== window) return; 
+    if(event.data.src && (event.data.src === "background.js")) { 
+        console.log("Page received: "); 
+        console.log(event.data); 
+        // Get the promise 
+        if(event.data.nonce) { 
+            var p = _eid_promises[event.data.nonce]; 
+            // resolve 
+            if(event.data.result === "ok") { 
+                if(event.data.signature !== undefined) { 
+                    p.resolve({hex: event.data.signature}); 
+                } else if(event.data.version !== undefined) { 
+                    p.resolve(event.data.extension + "/" + event.data.version); 
+                } else if(event.data.cert !== undefined) { 
+                    p.resolve({hex: event.data.cert}); 
+                } else { 
+                    console.log("No idea how to handle message"); 
+                    console.log(event.data); 
+                } 
+            } else { 
+                // reject 
+                p.reject(new Error(event.data.result)); 
+            } 
+            delete _eid_promises[event.data.nonce]; 
+        } else { 
+            console.log("No nonce in event msg"); 
+        } 
+    } 
+}, false); 
+ 
+ 
+function TokenSigning() { 
+    function nonce() { 
+        var val = ""; 
+        var hex = "abcdefghijklmnopqrstuvwxyz0123456789"; 
+        for(var i = 0; i < 16; i++) val += hex.charAt(Math.floor(Math.random() * hex.length)); 
+        return val; 
+    } 
+ 
+    function messagePromise(msg) { 
+        return new Promise(function(resolve, reject) { 
+            // amend with necessary metadata 
+            msg["nonce"] = nonce(); 
+            msg["src"] = "page.js"; 
+            // send message 
+            window.postMessage(msg, "*"); 
+            // and store promise callbacks 
+            _eid_promises[msg.nonce] = { 
+                resolve: resolve, 
+                reject: reject 
+            }; 
+        }); 
+    } 
+    this.getCertificate = function(options) { 
+        var msg = {type: "CERT", lang: options.lang, filter: options.filter}; 
+        console.log("getCertificate()"); 
+        return messagePromise(msg); 
+    }; 
+    this.sign = function(cert, hash, options) { 
+        var msg = {type: "SIGN", cert: cert.hex, hash: hash.hex, hashtype: hash.type, lang: options.lang, info: options.info}; 
+        console.log("sign()"); 
+        return messagePromise(msg); 
+    }; 
+    this.getVersion = function() { 
+        console.log("getVersion()"); 
+        return messagePromise({ 
+            type: "VERSION" 
+        }); 
+    }; 
+}</script></head>
+
+<body style="background: #FFFFFF">
+            <div class="row">
+                <div class="col-md-12">
+                    <center><h3 class="h2">Polaris Infosec Pte Ltd - Privacy Policy</h3></center>
+                </div>
+                <div class="col-md-10 offset-md-1 service-text">
+                    <br><br>
+
+                    Because protecting your privacy is very important to Polaris Infosec Pte Ltd, we operate our web site under the following guidelines to safeguard your personally identifiable information:
+                    
+                    <br><br>
+                    Polaris Infosec Pte Ltd policies and procedures for handling customer information have been created with the understanding that Internet technologies are still evolving and that Internet business methods are continuing to evolve to meet the needs and opportunities of the changing technologies. As a result, Polaris Infosec Pte Ltd policies and procedures are subject to change.
+                    <br><br>
+                    
+                    <p><b>How does Polaris Infosec Pte Ltd collect information from you?</b></p>
+
+                    Polaris Infosec Pte Ltd collects information from you when you send it to Polaris Infosec Pte Ltd directly by filling out forms on Polaris Infosec Pte Ltd's Website (including any application you may make for Services or the Software), corresponding with Polaris Infosec Pte Ltd by e-mail, writing to Polaris Infosec Pte Ltd by post, or speaking to Polaris Infosec Pte Ltd by telephone. Polaris Infosec Pte Ltd also collects information from you when you browse the Website and use the Software, as set out in detail below. Some of the methods Polaris Infosec Pte Ltd uses to collect data are automated and will take effect automatically as you navigate the Website and/or use the Software.
+                    
+                    <p><b>What information does Polaris Infosec Pte Ltd collect?</b></p>
+<u>Personal Information</u><br>
+Personal information means any information relating to an identified or identifiable natural person; an identifiable natural person is one who can be identified, directly or indirectly, by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person (“Personal Information”).
+<br><br>
+Polaris Infosec Pte Ltd may collect the following Personal Information from you: name, address, date of birth, telephone number, postal address, e-mail address, IP address, information about the type of browser you use, your operating system, the screen resolution of your browser, your ISP, which pages you view on the Website and the time and duration of your visits to the Website, credit card number (in the case of direct customers) and, if applicable, company name, postal address, telephone number, e-mail address, national identification number, passport number, credit card number or tax ID number as well as similar information concerning technical contacts, marketing contacts, and executive contacts within your company or organisation.
+
+<u>User Communications</u><br>
+If you communicate with Polaris Infosec Pte Ltd, Polaris Infosec Pte Ltd may collect information relating to that communication whether it takes the form of e-mail, letter, forum posting, testimonials or any other form of communication between you and Polaris Infosec Pte Ltd or submitted by you to the Website (collectively, “User Communications”).
+<br><br>
+<u>Server Information</u><br>
+If you use one of Polaris Infosec Pte Ltd’s services such as Polaris Infosec Pte Ltd's Web Hosting, Dedicated Server, VPS, Domain Name or SSL, Polaris Infosec Pte Ltd may collect certain information concerning such services and concerning the server upon which the services operates. This information includes without limitation: (a) the licensed or unlicensed status of the software used under the services; (b) the source from which the license for the software was obtained (i.e., Polaris Infosec Pte Ltd or an Polaris Infosec Pte Ltd affiliate); or (c) information about the server upon which the software is installed including (i) the public IP address, (ii) the operating system and (iii) the use of any virtualization technologies on such server ((a) through (c) collectively, “Server Information”)). Additionally, “Server Information” may also include information collected by Polaris Infosec Pte Ltd from time to time concerning which features of the software are most often used in order to improve and make adjustments to the software; and information collected from you by Polaris Infosec Pte Ltd in the event that you request technical support services including without limitation, IP addresses, usernames and passwords necessary to login to SSH, the directory of the server upon which you installed the software and any affected accounts including email accounts, MySQL accounts and other accounts.
+<br><br>
+<u>Non-Personal Information</u><br>
+Polaris Infosec Pte Ltd also collects data in a form that does not, on its own, permit direct association with any specific individual. Polaris Infosec Pte Ltd may collect, use, transfer, and disclose non-personal information for any purpose.
+<br><br>
+<b><p>What information does Polaris Infosec Pte Ltd collect if you’re under the age of 13?</p></b>
+By Default, Polaris Infosec Pte Ltd does not knowingly collect Personal Information about children under the age of 13. If Polaris Infosec Pte Ltd becomes aware that it has inadvertently collected Personal Information about children under the age of 13, it will take steps to delete the information as soon as possible, except where Polaris Infosec Pte Ltd is required by applicable law to keep it.
+<br><br>
+Where Polaris Infosec Pte Ltd knows a child is above the age of 13, but considered a minor under applicable law, Polaris Infosec Pte Ltd will obtain parental/guardian consent prior to using that child’s Personal Information.
+<br><br>
+<p><b>How does Polaris Infosec Pte Ltd use and store the information it collects?</b></p>
+As a general matter, Polaris Infosec Pte Ltd may use the Personal Information you disclose to Polaris Infosec Pte Ltd to improve and provide the Website, the Services and Polaris Infosec Pte Ltd’ other products and services, and for the specific purpose that you gave Polaris Infosec Pte Ltd your Personal Information. More specific details on how Polaris Infosec Pte Ltd uses your information follows below.
+<br><br>
+Polaris Infosec Pte Ltd may use Personal Information to create and authenticate your account, to process transactions you request such as domain name registration in order to perform any contract you have entered into with Polaris Infosec Pte Ltd, to provide you with customer and technical support and to communicate with you about your account and Polaris Infosec Pte Ltd’ products and services.
+<br><br>
+The Personal Information you provide to Polaris Infosec Pte Ltd allows Polaris Infosec Pte Ltd to provide you with the newsletters and mailing lists that you have signed up for with Polaris Infosec Pte Ltd. If you do not want to be on Polaris Infosec Pte Ltd’ mailing list, you can opt out at any time by changing your settings in your ‘My Details’ page within the client area.
+<br><br>
+Polaris Infosec Pte Ltd may also use Personal Information to offer, market or advertise to you Polaris Infosec Pte Ltd products and services. While such Polaris Infosec Pte Ltd products and services may reference, incorporate or include third-party products and services, Polaris Infosec Pte Ltd will not use your Personal Information to independently offer, market or advertise third-party products and services unless Polaris Infosec Pte Ltd first obtains your consent to do so.
+<br><br>
+From time to time, Polaris Infosec Pte Ltd may use your Personal Information to send important notices, such as important product updates and communications about purchases as well as changes to Polaris Infosec Pte Ltd’ terms, conditions, and policies. Because this information is important for your interaction with Polaris Infosec Pte Ltd you may not opt out of receiving these communications.
+<br><br>
+Polaris Infosec Pte Ltd may also use your Personal Information for any other legal purpose stated in this Privacy Policy, and any other purpose for which you have given Polaris Infosec Pte Ltd express consent.
+<br><br>
+Where you consent to Polaris Infosec Pte Ltd doing so, Polaris Infosec Pte Ltd may use your Personal Information to send you direct marketing communications. Should you ever choose to ‘opt out’ of receiving such communications, Polaris Infosec Pte Ltd may retain your Personal Information on file to ensure that Polaris Infosec Pte Ltd does not continue to target you with communications of the type that you have asked Polaris Infosec Pte Ltd to cease sending to you.
+<br><br>
+Polaris Infosec Pte Ltd limits the use of Personal Information to the purposes identified in this Privacy Policy and for which you have provided explicit consent. In accordance with established policies and procedures, Polaris Infosec Pte Ltd retains Personal Information only for as long as necessary to fulfil the stated purposes, unless it is required by law for a different period or Polaris Infosec Pte Ltd has the consent of the individual.
+<br><br>
+In accordance with established policies and procedures, Polaris Infosec Pte Ltd will periodically destroy or erase any Personal Information that is no longer needed.
+<br><br>
+Polaris Infosec Pte Ltd may use User Communications in the same way as Polaris Infosec Pte Ltd uses Personal Information. If you communicate with Polaris Infosec Pte Ltd for a particular purpose, Polaris Infosec Pte Ltd may use your User Communications for that purpose. For example, if you contact Polaris Infosec Pte Ltd for technical support, Polaris Infosec Pte Ltd may use your communications to provide technical support to you.
+<br><br>
+Polaris Infosec Pte Ltd may use Server Information to provide you with technical support services and to maintain, evaluate, improve and provide Polaris Infosec Pte Ltd products and services. Polaris Infosec Pte Ltd may also use such information to investigate unlicensed (and therefore unauthorised) uses of Polaris Infosec Pte Ltd’ software.
+<br><br>
+<b><p>Where is your Personal Information stored?</p></b>
+Polaris Infosec Pte Ltd is a global company and your peronal data may be transferred to and stored at our malaysia office and associated datacenters and by accepting our terms of service, you are explicitly consenting to this transfer and storage taking place. We will take all steps reasonably necessary to ensure that your personal information is treated securely and in accordance with this privacy policy.
+
+<b><p>How does Polaris Infosec Pte Ltd protect your Data Security?</p></b>
+Polaris Infosec Pte Ltd will protect the confidentiality of your personal information, account information and personal communications to the fullest extent possible and consistent with the law and the legitimate interests of Polaris Infosec Pte Ltd, its partners, its employees and other customers of Polaris Infosec Pte Ltd services. To protect the loss, misuse, and alteration of information that is collected from customers, Polaris Infosec Pte Ltd has appropriate physical, electronic, and managerial procedures in place.
+
+<b><p>How can I modify my personal information?</p></b>
+You may modify your personal information by logging a Help Desk ticket to make the request or update from the Polaris Infosec Pte Ltd Client Billing System.
+<br><br>
+If you have registered a domain name with Polaris Infosec Pte Ltd and wish to change the Technical Contact from Polaris Infosec Pte Ltd to another company or change any other registration information, you should be able to do so by logging into the respective Domain Registrar Control Panel. Polaris Infosec Pte Ltd provides you with full access to your domain account by sending you your own username and password. It is important to note that your domain name registration information is made publicly available in the registry of domain names. In the event you lose your domain password, you can log a Help Desk ticket and we will re-send the password to the email address on the domain registration record. In the event you lose your password and the email address on record with Domain Registrar is no longer valid, a direct request to Domain Registrar is required, therefore it is important to keep your Domain Registrar email address current as well as your email address with Polaris Infosec Pte Ltd.
+<br><br>
+<b><p>Will Polaris Infosec Pte Ltd Ever Send Me Direct Mailings?</p></b>
+From time to time, Polaris Infosec Pte Ltd may send you information about various products and services that may be of interest. We will not send you information of this type without specifically allowing you to “opt out” of such mailings. You can opt out by sending an e-mail to support@polarisec.com, however by doing so, you may miss important communication regarding your service.
+<br><br>
+In addition, if you are an Polaris Infosec Pte Ltd reseller, Polaris Infosec Pte Ltd and/or its partners and advertisers may from time to time send you newsletters, promotional material, and other mailings. You can opt out by sending an e-mail to support@polarisec.com.
+<br><br>
+<p><b>How Do I Protect My Personal Information In Public Forums?</b></p>
+Polaris Infosec Pte Ltd may offer interactive forums, such as message boards and chat. You should be aware that when you voluntarily disclose Personal Information to other users or to third parties on the Polaris Infosec Pte Ltd system, through e-mail, or outside of the Polaris Infosec Pte Ltd system, that information can be collected and used by others and may result in unsolicited messages from other members or third parties. While Polaris Infosec Pte Ltd strives to protect your Personal Information, Polaris Infosec Pte Ltd cannot guarantee the security of any information that you transmit to Polaris Infosec Pte Ltd, and you are solely responsible for maintaining the secrecy of any passwords or other account information.
+<br><br>
+<p><b>Information and access to your Personal Information</b></p>
+Based on what you have told Polaris Infosec Pte Ltd, Polaris Infosec Pte Ltd tries to ensure that your contact information and preferences are accurate, complete, and up to date. You have the right to request access to and rectification or erasure of Personal Information or restriction of processing concerning your Personal Information or to object to processing as well as the right to data portability. Polaris Infosec Pte Ltd will comply with erasure requests as long as Polaris Infosec Pte Ltd is not required to retain the Personal Information by law and does not need to retain it for its legitimate business purposes. Polaris Infosec Pte Ltd may decline to process requests that are frivolous/vexatious, jeopardise the privacy of others, are extremely impractical, or for which access is not otherwise required by local law. Access, correction, or deletion requests can be made by emailing support@polarisec.com.
+<br><br>
+<b><p>Your Rights</p></b>
+As a Data Subject you have a number of rights in relation to your Personal Information. These include your rights:
+<br><br>
+To ask Polaris Infosec Pte Ltd to confirm what (if any) Personal Information Polaris Infosec Pte Ltd holds relating to you and how that data is processed and used by Polaris Infosec Pte Ltd (of.ten referred to as a ‘Subject Access Request’);
+<br><br>
+To have Polaris Infosec Pte Ltd rectify Personal Information which Polaris Infosec Pte Ltd holds about you that is inaccurate;
+<br><br>
+To have Polaris Infosec Pte Ltd erase Personal Information which relates to you if it is no longer necessary for Polaris Infosec Pte Ltd to continue to process it, or if Polaris Infosec Pte Ltd has no lawful basis to store, process or retain it (though Polaris Infosec Pte Ltd does have rights to refuse these requests in certain situations);
+<br><br>
+To object to Polaris Infosec Pte Ltd processing your Personal Information;
+<br><br>
+To be informed about the existence of any automated decision making and profiling of your Personal Information, and where appropriate, be provided with meaningful information about the logic involved, as well as the significance and the envisaged consequences of such processing that affects you;
+<br><br>
+To have Polaris Infosec Pte Ltd provide you with a copy of your Personal Information for transfer to an alternative provider of similar services.
+<br><br>
+Should you ever wish to exercise one or more of these rights you should contact Polaris Infosec Pte Ltd at support@polarisec.com.
+<br><br>
+<b><p>Third party websites</p></b>
+Polaris Infosec Pte Ltd Website may, from time to time, contain links to and from the websites of Polaris Infosec Pte Ltd partner networks, advertisers and affiliates. If you follow a link to any of these websites, please note that these websites have their own privacy policies and that Polaris Infosec Pte Ltd does not accept any responsibility or liability for these policies. Please check these policies before you submit any Personal Information to these websites.
+<br><br>
+<p><b>Does Polaris Infosec Pte Ltd use cookies and web beacons?</b></p>
+<u>Cookies</u>
+Yes, Polaris Infosec Pte Ltd uses cookies to distinguish you from other users of the Website and to improve your overall experience. When you use the Website, certain information may be stored locally on your device using ‘cookies’ or similar technologies such as objects stored in the device’s local storage. A cookie is a small text file used to store limited information about the user of the device. They help Polaris Infosec Pte Ltd to identify how Polaris Infosec Pte Ltd’ users use the Website, and so that Polaris Infosec Pte Ltd can continue to develop and improve it.
+<br><br>
+Cookies do this by storing information about your preferences on your device, including the device model, manufacturer, screen resolution, device capabilities, service provider, country and city location data. Polaris Infosec Pte Ltd uses the following types of cookies:
+<br><br>
+Strictly necessary: These cookies enable Polaris Infosec Pte Ltd’ Website to function correctly and deliver the services and products you have requested.
+<br><br>
+Performance &amp; Functionality: These cookies are used to enhance the performance and functionality of Polaris Infosec Pte Ltd’ Website but are non-essential to their use (for example, Polaris Infosec Pte Ltd uses cookies to remember your preferences on the Website). However, without these cookies, certain functionality may become unavailable.
+<br><br>
+Analytical: These cookies collect information that is used either in aggregate form to help Polaris Infosec Pte Ltd understand how the Website is being used or to help Polaris Infosec Pte Ltd customise the Website for you. In particular Polaris Infosec Pte Ltd uses the Google analytics cookies. For more information about Google’s privacy policy, please visit http://www.google.com/intl/en/policies/. If you do not wish to allow the use of Google Analytics cookies at all, Google provides an opt-out plug-in for most common website browsers http://tools.google.com/dlpage/gaoptout.
+<br><br>
+By using the Service, you accept the use of cookies in accordance with this Privacy Policy.
+<br><br>
+<b><p>Your cookie choices</p></b>
+You have the right to choose whether to accept or refuse cookies and similar technologies. You can exercise this choice by not accepting the Terms of Service and this Privacy Policy, however, please note that if you choose to do so, you will not be able to use the Service.
+<br><br>
+For more information about what cookies are and your rights to control cookies, please visit the third party educational resource www.allaboutcookies.org.
+<br><br>
+<b><p>What About Privacy On Sites That Polaris Infosec Pte Ltd Links To?</p></b>
+Polaris Infosec Pte Ltd may provide links to its partners and other Internet sites. These sites have separate data and privacy practices independent of Polaris Infosec Pte Ltd, and Polaris Infosec Pte Ltd disclaims any responsibility or liability for their policies or actions.
+<br><br>
+<p><b>How does Polaris Infosec Pte Ltd disclose the Personal Information it collects?</b></p>
+Polaris Infosec Pte Ltd will not otherwise disclose its customers’ personal and account information unless Polaris Infosec Pte Ltd has reason to believe that disclosing such information is necessary to identify, make contact with, or bring legal action against someone who may be causing harm or interfering with the rights or property of Polaris Infosec Pte Ltd, Polaris Infosec Pte Ltd customers, or others, or where Polaris Infosec Pte Ltd has a good faith belief that the law requires such disclosure.
+<br><br>
+Polaris Infosec Pte Ltd cannot be responsible for protecting your Personal Information if you share such information in publicly available sections of the Website such as the user forums or testimonials section. You should use your own judgment in disclosing this information on the Website.
+<br><br>
+Polaris Infosec Pte Ltd also will not, except for reasons stated below, disclose to third parties the contents of any electronic mail or other electronic communications that Polaris Infosec Pte Ltd stores or transmits for its customers. The circumstances under which Polaris Infosec Pte Ltd will disclose such electronic customer communications are when:
+<br><br>
+it is necessary in order to provide service to the customer;<br>
+it is necessary to protect the legitimate interests of Polaris Infosec Pte Ltd and its customers;<br>
+<br>it is required to cooperate with interception orders, warrants, or other legal process that Polaris Infosec Pte Ltd determines in its sole discretion to be valid and enforceable; and
+<br>it is necessary to provide to a law enforcement agency when the contents are inadvertently obtained by Polaris Infosec Pte Ltd and appear to pertain to the commission of a crime.
+<br><br>Polaris Infosec Pte Ltd disclaims any intention to censor, edit or engage in ongoing review or surveillance of communications stored on or transmitted through its facilities by customers or others. Polaris Infosec Pte Ltd will, however, review, delete or block access to communications that may harm Polaris Infosec Pte Ltd, its customers or third parties. The grounds on which Polaris Infosec Pte Ltd may take such action include, but are not limited to, actual or potential violations of Polaris Infosec Pte Ltd policies.
+<br><br>
+In the event that Polaris Infosec Pte Ltd is purchased by another company, merges with another company or has a substantial portion of its assets purchased by another company, Polaris Infosec Pte Ltd may share your Personal Information with that company. In such an event, Polaris Infosec Pte Ltd will notify you in accordance with the notice provisions of the Terms of Use.
+<br><br>
+Polaris Infosec Pte Ltd may disclose your Personal Information to affiliated third parties and third party suppliers or service providers that assist Polaris Infosec Pte Ltd in providing, maintaining, valuating, and improving the Website, the Services and any other Polaris Infosec Pte Ltd products and services. Polaris Infosec Pte Ltd may disclose your Personal Information to affiliated third parties for the purposes of offering, marketing or advertising Polaris Infosec Pte Ltd products and services to you (such Polaris Infosec Pte Ltd products and services may reference, incorporate or include third-party products and services). In such an event, Polaris Infosec Pte Ltd will take reasonable measures to prevent such affiliated third parties from using your Personal Information for other purposes.
+<br><br>
+<b><p>What if you have questions, comments or complaints about this Privacy Policy?</p></b>
+Please feel free to direct any questions, comments or complaints regarding this Privacy Policy using the contact information listed in the Notices section of the Polaris Infosec Pte Ltd Terms of Use. It is Polaris Infosec Pte Ltd policy to investigate and attempt to resolve all formal written complaints Polaris Infosec Pte Ltd receives concerning this Privacy Policy. Polaris Infosec Pte Ltd will cooperate with appropriate regulatory authorities, including local data protection authorities, to resolve any complaints regarding the transfer of personal data that cannot be resolved between Polaris Infosec Pte Ltd and an individual.
+
+&nbsp;</div>
+    </div>
+
+
+</body></html>

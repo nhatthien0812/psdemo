@@ -1,0 +1,138 @@
+@include font-face("protokoll", "../fonts/protokoll_bold-webfont.woff", 600);
+@include font-face("protokoll", "../fonts/protokoll_light-webfont.woff", 400);
+@include font-face("protokoll", "../fonts/protokoll_medium-webfont.woff");
+@include font-face("protokoll", "../fonts/protokoll-webfont.woff");
+body,
+html {
+  font-size: 16px;
+  font-family: $font-pri;
+}
+
+.bg-pri {
+  background: $bg-pri;
+}
+
+.cta-btn {
+  border-radius: 4px;
+  border: 0;
+  font-size: $font-size-md;
+  margin-right: 1rem;
+  display: inline-flex;
+  padding: 6px 25px;
+  cursor: pointer;
+  outline: none;
+  background: $bg-btn;
+  color: $txt-btn;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    text-decoration: none;
+    color: $txt-btn;
+  }
+}
+.img {
+  overflow: hidden;
+}
+img {
+  max-width: 100%;
+}
+
+.main-title {
+  font-weight: bold;
+}
+.cover-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.main-title {
+  margin-bottom: 25px;
+  font-size: $font-size-xl;
+}
+
+.main-content {
+  padding-top: 100px;
+  padding-bottom: 25px;
+  @include media($tablet) {
+    padding-top: 235px;
+  }
+}
+.logo-page {
+  margin-bottom: 34px;
+  img {
+    width: 67%;
+  }
+
+  @include media($tablet) {
+    margin-bottom: 80px;
+    img {
+      width: 40%;
+    }
+  }
+}
+.main-frm {
+  form {
+    input,
+    button,
+    textarea {
+      border: 0;
+      width: 100%;
+      outline: none;
+      color: $txt-content;
+    }
+    input,
+    textarea {
+      margin-bottom: 16px;
+      background: $bg-input;
+      padding-left: 23px;
+      font-size: $font-size-r;
+      &::placeholder {
+        color: rgba($txt-content, 0.58);
+      }
+    }
+    input,
+    textarea,
+    button {
+      border-radius: 4px;
+    }
+    input {
+      height: 60px;
+    }
+    input,
+    button {
+      display: flex;
+      align-items: center;
+    }
+    button {
+      height: 42px;
+      background: $bg-submit-btn;
+      justify-content: center;
+      font-size: $font-size-sm;
+      outline: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: darken($bg-submit-btn, 7%);
+    }
+  }
+}
+.bg-page {
+  background: $bg-pri;
+
+  @include media($tablet) {
+    // background: $bg-pri url(../images/background/Spiral_2.svg) no-repeat;
+    background: $bg-pri url(../images/background/spiral-2.png) no-repeat;
+    background-position: right;
+    background-attachment: fixed;
+    background-size: 65%;
+  }
+}
+@include media {
+  .container {
+    max-width: 1200px;
+  }
+  .main-title {
+    font-size: $main-title;
+  }
+}

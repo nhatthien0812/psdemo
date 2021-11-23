@@ -1,0 +1,301 @@
+.banner {
+  padding-top: 2rem;
+  background-image: url(../images/background/bg-banner-sm.png);
+  background-position: center bottom;
+  background-size: 170%;
+  background-repeat: no-repeat;
+  color: $txt-content;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    font-size: $font-size-xxl; //36px
+    line-height: 44px;
+    font-weight: bold;
+  }
+  .sub-title {
+    font-size: $font-size-lg; //24px
+    line-height: 32px;
+    margin: 1rem 0;
+  }
+  .text {
+    font-size: $font-size-md;
+  }
+  .btn-group {
+    padding-top: 30px;
+    .cta-btn {
+      font-size: $font-size-r;
+      width: 180px;
+      height: 48px;
+      transition: all .2s;
+
+      &:hover {
+        background-color: #ccc;
+      }
+    }
+  }
+
+  @include media($tablet) {
+    padding-top: 5.5rem;
+    background-image: url(../images/background/bg-banner-lg.png);
+    background-position: center 2%;
+    .title {
+      font-weight: bold;
+      font-size: $main-title; //56px
+      line-height: 68px;
+    }
+    .sub-title {
+      font-size: $font-size-xl; //32px
+    }
+    .text {
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 50px;
+    }
+    .btn-group {
+      padding-top: 50px;
+    }
+  }
+}
+.banner .dashboard {
+  margin-right: -30%;
+  margin-top: 70px;
+  @include media($tablet) {
+    margin-right: 0;
+    margin-top: 90px;
+    &::before {
+      padding-top: 42%;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+.see-it-action .dashboard {
+  margin-right: -33%;
+  margin-top: 30px;
+  &:before {
+    padding-top: 65%;
+  }
+  @include media($tablet) {
+    &:before {
+      padding-top: 35%;
+    }
+  }
+  @include media($tablet-pro) {
+    margin-right: -6.25rem;
+    margin-top: 70px;
+    &:before {
+      padding-top: 47%;
+    }
+  }
+}
+.dashboard {
+  position: relative;
+  overflow: hidden;
+  border: 8.72358px solid rgba(255, 255, 255, 0.2);
+  border-top-left-radius: 12.213px;
+  border-top-right-radius: 12.213px;
+  border-bottom: none;
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 70%;
+    background: linear-gradient(
+      110.56deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0) 93.09%
+    );
+    position: relative;
+    z-index: 1;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    max-width: none;
+  }
+}
+.bg-diff {
+  background-image: url(../images/background/diff-sec.png);
+  background-repeat: no-repeat;
+  background-size: 130%;
+  background-position: center 30%;
+  @include media($tablet) {
+    background: unset;
+  }
+}
+.scroll-animations .item.animated {
+  opacity: 0;
+}
+.differences {
+  .item {
+    text-align: center;
+    margin-bottom: 1.5rem;
+
+    .img img {
+      width: 120px;
+      height: auto;
+    }
+    .title {
+      font-size: $font-size-md;
+      margin: 1.5rem 0;
+      font-weight: 600;
+      color: $txt-second;
+    }
+    .text {
+      font-size: $font-size-sm;
+      color: $txt-content;
+    }
+  }
+  .video .title {
+    font-size: $font-size-xl;
+  }
+  @include media($tablet) {
+    padding: 5rem 0;
+    .item .text {
+      font-size: 1rem;
+    }
+  }
+}
+
+@include media {
+  .features-wrapper {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+.features {
+  padding-top: 50px;
+  padding-bottom: 160px;
+  .item {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $txt-content;
+  }
+  .item .content {
+    .title {
+      font-size: $font-size-lg;
+      line-height: 32px;
+      margin-bottom: 1rem;
+    }
+    .text {
+      font-size: 1rem;
+    }
+  }
+}
+@include media($tablet-pro) {
+  .features-bg {
+    background-image: url(../images/background/SpiralHome.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 100% center;
+    background-attachment: fixed;
+  }
+  .features .item .content {
+    padding: 2rem;
+    .title {
+      font-size: $font-size-xl;
+    }
+    .text {
+      font-size: $font-size-md;
+    }
+  }
+}
+.see-it-action {
+  .content {
+    color: $txt-content;
+    width: 95%;
+  }
+  .title {
+    font-size: $font-size-xl;
+    font-weight: bold;
+  }
+  .text {
+    font-size: $font-size-md;
+    line-height: 32px;
+    margin: 1rem 0;
+  }
+  .cta-btn {
+    padding: 14px 60px;
+    &:hover {
+        background-color: #ccc;
+      }
+  }
+  @include media($tablet) {
+    .title {
+      font-size: $main-title;
+    }
+    .text {
+      margin: 1rem 0;
+    }
+  }
+  @include media($tablet-pro) {
+    .content {
+      width: 70%;
+    }
+  }
+}
+.see-it-action .wrapper {
+  overflow: hidden;
+  position: relative;
+  margin-top: -190px;
+  z-index: 1;
+  border-radius: 16px;
+  padding: 63px 16px 0;
+
+  filter: drop-shadow(0px 100px 80px rgba(1, 22, 89, 0.03))
+    drop-shadow(0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198))
+    drop-shadow(0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275))
+    drop-shadow(0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035))
+    drop-shadow(0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725))
+    drop-shadow(0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802));
+  &:after {
+    content: "";
+    background-image: url(../images/background/MaskGroup.svg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: top center;
+  }
+  @include media($tablet-pro) {
+    padding: unset;
+    &:after {
+      background-image: url(../images/background/MaskGroupDesktop.svg);
+    }
+  }
+  @include media {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.clients {
+  margin-top: 5rem;
+  .title {
+    font-size: 1rem;
+  }
+
+  .item {
+    margin-bottom: 70px;
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
