@@ -1,2 +1,0 @@
-# polarisec.com-demo
-# psdemo
