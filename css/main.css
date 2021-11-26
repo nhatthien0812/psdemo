@@ -10026,3 +10026,11 @@ footer .nav a {
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+.line{
+    border: solid 1px #8bdfaf;
+}
+
+.linkedin-logo{
+    border-radius: 2px;
+}
