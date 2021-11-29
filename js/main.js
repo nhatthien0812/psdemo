@@ -30,7 +30,7 @@ $(document).ready(function () {
     e.preventDefault();
     var $result = $('#result-placeholder');
     var $button = $('#btn-send-message');
-    var errorMessage = 'Something went wrong! Please try again or send us an email to <a href="mailto:hello@polarisec.com">hello@polarisec.com</a>';
+    var errorMessage = 'Something went wrong! Please try again or send us an email to <a href="mailto:support@polarisec.com">support@polarisec.com</a>';
     var successMessage = 'Thank you! Your message has been successfully sent. We will be in touch shortly.';
     $button.text('Sending...');
     $button.attr('disabled', true);
