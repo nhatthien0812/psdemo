@@ -10022,16 +10022,22 @@ footer .nav a {
     padding-bottom: 20px;
 }
 
-.cert-title{
+.cert-title {
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.line{
+.line {
     border: solid 1px #8bdfaf;
 }
 
-.linkedin-logo{
+.linkedin-logo {
     margin-bottom: 40px;
     margin-top: -230px;
+}
+
+@media only screen and (max-width: 600px) {
+    .linkedin-logo {
+        justify-content: center;
+    }
 }
