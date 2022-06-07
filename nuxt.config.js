@@ -10,7 +10,7 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   router: {
-    base: '/psdemo/',
+    base: process.env.BASE_URL || '',
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
