@@ -26,7 +26,7 @@
            <span class="brand-2">
             Contact number:
            </span>
-              +84.287.101.7755
+              +84.287.101.7755-----5
             </p>
           </div>
         </b-col>
